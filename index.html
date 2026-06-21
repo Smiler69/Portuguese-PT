@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fala Português? Learn European Portuguese — Linguavita</title>
+<meta name="description" content="Learn European Portuguese with 400 words, verb conjugations, listening exercises and spaced repetition. One-time purchase, yours forever.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A140A;
+    --cream:#F3EFE6;
+    --ivory:#FDFAF4;
+    --navy:#1C2B4A;
+    --navy-deep:#111A2E;
+    --gold:#C9A84C;
+    --gold-light:#E8D5A0;
+    --gold-pale:#F5EDD4;
+    --terra:#B85C38;
+    --terra-deep:#8B3E22;
+    --terra-light:#D4724E;
+    --teal:#2E7D6B;
+    --text-light:#5C5070;
+    --border:rgba(201,168,76,0.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;background:var(--navy);position:relative;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:3rem 2rem;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(201,168,76,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(184,92,56,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 90%, rgba(46,125,107,0.08) 0%, transparent 45%);
+    pointer-events:none;
+  }
+  .hero-ornament{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--gold);font-size:0.8rem;letter-spacing:0.4em;text-transform:uppercase;
+    margin-bottom:1.5rem;opacity:0.7;
+  }
+  .hero-flag{font-size:clamp(2.5rem,8vw,4.5rem);margin-bottom:1rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.3));}
+  .hero-title{
+    font-family:'Playfair Display',serif;font-size:clamp(2.8rem,9vw,6rem);
+    color:white;text-align:center;line-height:1.05;font-weight:900;margin-bottom:0.5rem;
+  }
+  .hero-title em{font-style:italic;color:var(--gold-light);}
+  .hero-subtitle{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(1rem,3vw,1.4rem);color:rgba(255,255,255,0.55);
+    letter-spacing:0.08em;margin-bottom:0.5rem;text-align:center;
+  }
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    background:rgba(184,92,56,0.2);border:1px solid var(--terra-light);
+    color:var(--terra-light);border-radius:20px;
+    padding:0.3rem 1rem;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
+    margin-bottom:2rem;
+  }
+  .hero-tagline{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:clamp(1.1rem,3.5vw,1.7rem);color:var(--gold-light);
+    text-align:center;max-width:600px;line-height:1.4;margin-bottom:2.5rem;
+  }
+  .hero-cta-group{display:flex;flex-direction:column;align-items:center;gap:0.8rem;margin-bottom:2rem;}
+  .btn-hero-primary{
+    display:inline-flex;align-items:center;gap:0.6rem;
+    background:var(--terra);color:white;border:2px solid var(--terra);
+    font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;
+    letter-spacing:0.15em;text-transform:uppercase;
+    padding:1rem 2.2rem;border-radius:2px;text-decoration:none;
+    transition:all 0.3s;cursor:pointer;
+  }
+  .btn-hero-primary:hover{background:var(--terra-deep);border-color:var(--terra-deep);}
+  .btn-hero-secondary{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    background:transparent;color:rgba(255,255,255,0.6);
+    border:1px solid rgba(255,255,255,0.2);
+    font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
+    padding:0.7rem 1.5rem;border-radius:2px;text-decoration:none;transition:all 0.3s;
+  }
+  .btn-hero-secondary:hover{color:white;border-color:rgba(255,255,255,0.5);}
+  .hero-preview-label{
+    font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;
+    color:rgba(255,255,255,0.25);margin-top:2.5rem;
+  }
+  .hero-stats{
+    display:flex;gap:2.5rem;margin-top:1rem;flex-wrap:wrap;justify-content:center;
+  }
+  .hero-stat{text-align:center;}
+  .hero-stat-num{
+    font-family:'Playfair Display',serif;font-size:1.8rem;
+    color:var(--gold-light);display:block;line-height:1;
+  }
+  .hero-stat-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.3rem;}
+  .price-hint{margin-top:0.5rem;font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;}
+  .scroll-hint{
+    position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,0.2);font-size:0.65rem;letter-spacing:0.2em;
+    text-transform:uppercase;animation:bounce 2s infinite;
+  }
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+  /* SECTION SHARED */
+  .section{padding:5rem 2rem;}
+  .section-inner{max-width:700px;margin:0 auto;}
+  .section-label{
+    font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:0.8rem;
+  }
+  .section-title{
+    font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);
+    color:var(--navy);line-height:1.15;margin-bottom:1rem;
+  }
+  .section-title em{font-style:italic;color:var(--terra);}
+  .section-body{
+    font-family:'Cormorant Garamond',serif;font-size:1.1rem;
+    color:var(--text-light);line-height:1.7;
+  }
+  .divider{
+    text-align:center;color:var(--gold);font-size:1rem;
+    letter-spacing:0.6em;opacity:0.4;margin:1.5rem 0;
+  }
+
+  /* PORTUGAL FACTS */
+  .portugal-facts{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:1px;background:var(--border);border:1px solid var(--border);
+    border-radius:3px;overflow:hidden;margin:2.5rem 0;
+  }
+  .fact-cell{
+    background:var(--ivory);padding:1.4rem 1.2rem;text-align:center;
+  }
+  .fact-icon{font-size:1.6rem;margin-bottom:0.5rem;display:block;}
+  .fact-title{
+    font-family:'Playfair Display',serif;font-size:0.95rem;
+    color:var(--navy);margin-bottom:0.3rem;
+  }
+  .fact-body{font-size:0.78rem;color:var(--text-light);line-height:1.4;}
+
+  /* FEATURES */
+  .features-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem;margin-top:2rem;
+  }
+  .feature-card{
+    border:1px solid var(--border);background:var(--ivory);border-radius:3px;
+    padding:1.4rem;transition:box-shadow 0.2s;
+  }
+  .feature-card:hover{box-shadow:0 4px 20px rgba(28,43,74,0.08);}
+  .feature-icon{font-size:1.5rem;margin-bottom:0.6rem;}
+  .feature-title{
+    font-family:'Playfair Display',serif;font-size:1rem;
+    color:var(--navy);margin-bottom:0.4rem;
+  }
+  .feature-body{font-size:0.8rem;color:var(--text-light);line-height:1.5;}
+
+  /* EP vs BR */
+  .diff-table{border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:2rem 0;}
+  .diff-header{
+    display:grid;grid-template-columns:1fr 1fr 1fr;
+    background:var(--navy);padding:0.7rem 1rem;
+    font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+  }
+  .diff-header span:first-child{color:var(--gold);}
+  .diff-header span:nth-child(2){color:rgba(255,255,255,0.5);text-align:center;}
+  .diff-header span:last-child{color:var(--terra-light);text-align:right;}
+  .diff-row{
+    display:grid;grid-template-columns:1fr 1fr 1fr;
+    padding:0.65rem 1rem;border-bottom:1px solid var(--border);
+    background:var(--ivory);align-items:center;font-size:0.85rem;
+  }
+  .diff-row:last-child{border-bottom:none;}
+  .diff-row:nth-child(even){background:var(--cream);}
+  .diff-ep{font-family:'Playfair Display',serif;color:var(--navy);}
+  .diff-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);text-align:center;}
+  .diff-br{font-family:'Playfair Display',serif;color:var(--text-light);text-align:right;font-size:0.8rem;}
+
+  /* SCREENSHOT MOCKUP */
+  .app-mockup{
+    border:2px solid var(--gold);border-radius:6px;overflow:hidden;
+    box-shadow:0 12px 50px rgba(28,43,74,0.2);margin:2.5rem 0;
+    background:var(--navy);
+  }
+  .mockup-bar{
+    background:var(--navy-deep);padding:0.7rem 1rem;
+    display:flex;align-items:center;gap:0.5rem;
+  }
+  .mockup-dot{width:10px;height:10px;border-radius:50%;}
+  .mockup-title{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:0.8rem;color:var(--gold);margin-left:auto;margin-right:auto;
+  }
+  .mockup-body{padding:1.5rem;}
+  .mockup-card{
+    background:var(--ivory);border:1px solid var(--border);border-radius:4px;
+    padding:2rem;text-align:center;margin-bottom:1rem;
+  }
+  .mockup-word{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:0.3rem;}
+  .mockup-ipa{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:0.9rem;margin-bottom:0.8rem;}
+  .mockup-cat{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  .mockup-tip{
+    background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);
+    border-radius:3px;padding:0.5rem 0.8rem;
+    font-size:0.75rem;color:var(--navy);text-align:left;line-height:1.4;
+    margin-top:0.8rem;
+  }
+  .mockup-tip strong{color:var(--gold);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:0.2rem;}
+  .mockup-tabs{display:flex;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;}
+  .mockup-tab{flex:1;padding:0.5rem 0.2rem;text-align:center;font-size:0.55rem;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+  .mockup-tab.active{background:var(--terra);color:white;}
+
+  /* PRICING */
+  .pricing{background:var(--navy);padding:5rem 2rem;}
+  .pricing-inner{max-width:620px;margin:0 auto;text-align:center;}
+  .pricing .section-title{color:white;}
+  .pricing .section-label{color:var(--gold);}
+  .pricing .section-body{color:rgba(255,255,255,0.5);}
+  .price-card{
+    background:var(--ivory);border:2px solid var(--gold);border-radius:3px;
+    padding:3rem 2.5rem;margin-top:3rem;position:relative;
+    box-shadow:0 8px 40px rgba(201,168,76,0.15);
+  }
+  .price-badge{
+    position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--navy-deep);
+    font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;
+    letter-spacing:0.2em;text-transform:uppercase;
+    padding:0.3rem 1.2rem;border-radius:0 0 3px 3px;
+  }
+  .price-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terra);margin-bottom:0.3rem;}
+  .price-title em{font-style:italic;}
+  .price-desc{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:1rem;margin-bottom:2rem;}
+  .price-dual{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+  .price-option{display:flex;flex-direction:column;align-items:center;gap:0.6rem;flex:1;min-width:180px;}
+  .price-divider-or{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:1.1rem;flex-shrink:0;}
+  .price-amount{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--terra);font-weight:700;line-height:1;margin-bottom:0.1rem;}
+  .price-amount span{font-size:1.4rem;vertical-align:super;font-weight:400;}
+  .price-flag{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);}
+  .price-once{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:2rem;display:block;}
+  .price-features{list-style:none;margin-bottom:2.5rem;text-align:left;}
+  .price-features li{
+    font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--terra);
+    padding:0.5rem 0;border-bottom:1px solid var(--border);
+    display:flex;align-items:center;gap:0.7rem;
+  }
+  .price-features li:last-child{border-bottom:none;}
+  .price-features li::before{content:'✦';color:var(--gold);font-size:0.7rem;flex-shrink:0;}
+  .btn-buy{
+    display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+    width:100%;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;
+    letter-spacing:0.15em;text-transform:uppercase;
+    padding:1.1rem 2rem;border-radius:2px;text-decoration:none;
+    transition:all 0.3s;cursor:pointer;border:2px solid transparent;
+  }
+  .btn-buy-gbp{background:var(--terra);color:white;border-color:var(--terra);}
+  .btn-buy-gbp:hover{background:var(--terra-deep);border-color:var(--terra-deep);}
+  .btn-buy-eur{background:var(--teal);color:white;border-color:var(--teal);}
+  .btn-buy-eur:hover{background:#246357;border-color:#246357;}
+  .price-guarantee{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--text-light);}
+  .price-guarantee::before{content:'🔒 ';}
+
+  /* FAQ */
+  .faq{padding:5rem 2rem;max-width:700px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0;}
+  .faq-q{
+    font-family:'Playfair Display',serif;font-size:1rem;color:var(--terra);
+    margin-bottom:0.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;
+  }
+  .faq-a{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-light);line-height:1.6;}
+
+  /* FOOTER */
+  footer{
+    text-align:center;padding:2.5rem 2rem;
+    border-top:1px solid var(--border);
+    background:var(--navy-deep);
+  }
+  .footer-logo{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:1.1rem;color:var(--gold);margin-bottom:0.5rem;
+  }
+  .footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:0.8rem 0;}
+  .footer-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.2);letter-spacing:0.05em;}
+
+  @media(max-width:500px){
+    .price-amount{font-size:2.8rem;}
+    .portugal-facts{grid-template-columns:1fr 1fr;}
+    .price-dual{flex-direction:column;}
+    .diff-header,.diff-row{grid-template-columns:1fr 1fr;}
+    .diff-br,.diff-header span:last-child{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ornament">✦ &nbsp; Linguavita — Language for Life &nbsp; ✦</div>
+  <div class="hero-flag">🇵🇹</div>
+  <h1 class="hero-title">Fala <em>Português</em>?</h1>
+  <p class="hero-subtitle">European Portuguese · Portugal</p>
+  <div class="hero-badge">⚠ Not Brazilian Portuguese — this is Portugal</div>
+  <p class="hero-tagline">"The language of Camões, fado and the sea —<br>learn the real Portuguese of Portugal."</p>
+  <div class="hero-cta-group">
+    <a href="#pricing" class="btn-hero-primary">Get the app — from £8.50</a>
+    <a href="#features" class="btn-hero-secondary">See what's inside ↓</a>
+  </div>
+  <p class="price-hint">One-time purchase · No subscription · Yours forever</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">400</span><span class="hero-stat-label">Words</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">12</span><span class="hero-stat-label">Verbs</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">42</span><span class="hero-stat-label">Phrases</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">7</span><span class="hero-stat-label">Study Modes</span></div>
+  </div>
+  <div class="scroll-hint">scroll to explore ↓</div>
+</section>
+
+<!-- WHY EP -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner">
+    <p class="section-label">Why European Portuguese?</p>
+    <h2 class="section-title">Portugal sounds <em>different</em>.<br>This app teaches you that.</h2>
+    <p class="section-body">Most Portuguese apps teach Brazilian Portuguese — perfectly fine if you're heading to São Paulo. But if you're visiting Lisbon, Porto or the Algarve, you need European Portuguese. The accent is different, the vocabulary is different, and even the grammar has its own character.</p>
+    <div class="divider">· · · ✦ · · ·</div>
+    <p class="section-body">Every word, tip and example in this app reflects how Portuguese is actually spoken in Portugal — from ordering a <em>bica</em> in a Lisbon café to catching the <em>comboio</em> to Porto. No Brazilian spellings, no Brazilian idioms. Just the real thing.</p>
+
+    <div class="portugal-facts">
+      <div class="fact-cell">
+        <span class="fact-icon">🎵</span>
+        <div class="fact-title">Fado</div>
+        <div class="fact-body">UNESCO-listed music born in Lisbon's Alfama — the sound of saudade</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">🏛️</span>
+        <div class="fact-title">History</div>
+        <div class="fact-body">Europe's oldest capital — Lisbon has been settled for over 3,000 years</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">🐟</span>
+        <div class="fact-title">Bacalhau</div>
+        <div class="fact-body">365 recipes for salt cod — one for every day of the year, they say</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">🌊</span>
+        <div class="fact-title">Atlantic</div>
+        <div class="fact-body">1,700km of coastline — Europe's westernmost nation facing the open ocean</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-top:2rem;">European Portuguese vs Brazilian</p>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:1rem;">Key differences you need to know</h3>
+    <div class="diff-table">
+      <div class="diff-header"><span>🇵🇹 European PT</span><span>English</span><span>🇧🇷 Brazilian PT</span></div>
+      <div class="diff-row"><span class="diff-ep">comboio</span><span class="diff-en">train</span><span class="diff-br">trem</span></div>
+      <div class="diff-row"><span class="diff-ep">telemóvel</span><span class="diff-en">mobile phone</span><span class="diff-br">celular</span></div>
+      <div class="diff-row"><span class="diff-ep">pequeno-almoço</span><span class="diff-en">breakfast</span><span class="diff-br">café da manhã</span></div>
+      <div class="diff-row"><span class="diff-ep">casa de banho</span><span class="diff-en">bathroom</span><span class="diff-br">banheiro</span></div>
+      <div class="diff-row"><span class="diff-ep">autocarro</span><span class="diff-en">bus</span><span class="diff-br">ônibus</span></div>
+      <div class="diff-row"><span class="diff-ep">frigorífico</span><span class="diff-en">fridge</span><span class="diff-br">geladeira</span></div>
+      <div class="diff-row"><span class="diff-ep">perceber</span><span class="diff-en">to understand</span><span class="diff-br">entender</span></div>
+      <div class="diff-row"><span class="diff-ep">estou a fazer</span><span class="diff-en">I am doing</span><span class="diff-br">estou fazendo</span></div>
+    </div>
+    <p class="section-body" style="font-size:0.88rem;">This app teaches the <em>European</em> column — and flags every difference so you know exactly what you're learning.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <p class="section-label">What's inside</p>
+    <h2 class="section-title">Seven ways to<br><em>learn and practise</em></h2>
+
+    <div class="app-mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot" style="background:#ff5f57;"></div>
+        <div class="mockup-dot" style="background:#ffbd2e;"></div>
+        <div class="mockup-dot" style="background:#28c940;"></div>
+        <div class="mockup-title">🇵🇹 Fala Português? — Linguavita</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-card">
+          <div class="mockup-cat">Travel</div>
+          <div class="mockup-word">comboio</div>
+          <div class="mockup-ipa">/kõˈboju/</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:#888;">O comboio parte às nove.</div>
+          <div class="mockup-tip"><strong>💡 Grammar Tip</strong>"Comboio" is ONLY used in European Portuguese — Brazil says "trem". One of the clearest differences between the two varieties!</div>
+        </div>
+        <div class="mockup-tabs">
+          <div class="mockup-tab active">⭐ Daily</div>
+          <div class="mockup-tab">Cards</div>
+          <div class="mockup-tab">Sentences</div>
+          <div class="mockup-tab">🎧 Listen</div>
+          <div class="mockup-tab">Verbs</div>
+          <div class="mockup-tab">Quiz</div>
+          <div class="mockup-tab">Progress</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Daily 10</div>
+        <div class="feature-body">Ten words chosen for you each day — prioritising due reviews, then unseen words, then weak spots. Five minutes a day builds a real habit.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🃏</div>
+        <div class="feature-title">Flashcards + SRS</div>
+        <div class="feature-body">400 words with IPA pronunciation, example sentences and grammar tips. Spaced repetition schedules your reviews automatically.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Sentence Cards</div>
+        <div class="feature-body">Fill-in-the-blank cards built from real example sentences. See the word in context, not just in isolation.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎧</div>
+        <div class="feature-title">Listen Mode</div>
+        <div class="feature-body">Hear European Portuguese spoken aloud, then pick the correct meaning. Trains your ear for Portugal's distinctive sounds.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">Verb Conjugations</div>
+        <div class="feature-body">12 essential verbs — present, past and future — with full conjugation tables and notes on EP-specific patterns like <em>estou a fazer</em>.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">Quiz + Progress</div>
+        <div class="feature-body">Test yourself with a four-option quiz, track mastery level for every word, earn achievements, and back up your progress as a file.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCABULARY SAMPLE -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner">
+    <p class="section-label">400 words across 15 categories</p>
+    <h2 class="section-title">Essential vocabulary<br><em>for real life in Portugal</em></h2>
+    <p class="section-body">From ordering a <em>galão</em> at a Lisbon café to navigating the <em>miradouros</em> of Alfama — the vocabulary is chosen for what you actually need when visiting Portugal.</p>
+    <div class="divider">· · · ✦ · · ·</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;">
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Essentials (36)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Actions (40)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Places (30)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Food &amp; Drink (30)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Travel (29)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Descriptions (33)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">People (25)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Numbers (25)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Time (25)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Home (24)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Nature (24)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Shopping (25)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Emotions (18)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Health (19)</span>
+      <span style="background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.3);color:var(--terra);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Weather (17)</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <p class="section-label">Simple pricing</p>
+    <h2 class="section-title">One price.<br><em>Yours forever.</em></h2>
+    <p class="section-body">No subscription. No monthly fees. Pay once and the app is yours — with all your progress saved in your browser, forever.</p>
+
+    <div class="price-card">
+      <div class="price-badge">🇵🇹 European Portuguese · Complete Edition</div>
+      <h3 class="price-title">Fala <em>Português</em>?</h3>
+      <p class="price-desc">The complete Linguavita European Portuguese app — 400 words, 12 verbs, 42 phrases, 7 study modes.</p>
+
+      <div class="price-dual">
+        <div class="price-option">
+          <div class="price-amount"><span>£</span>8.50</div>
+          <div class="price-flag">🇬🇧 British pounds</div>
+          <a href="https://milescape580.gumroad.com/l/mcybrc" class="btn-buy btn-buy-gbp">Buy in GBP →</a>
+        </div>
+        <div class="price-divider-or">or</div>
+        <div class="price-option">
+          <div class="price-amount"><span>€</span>9.99</div>
+          <div class="price-flag">🇪🇺 Euros</div>
+          <a href="https://milescape580.gumroad.com/l/nfjkfh" class="btn-buy btn-buy-eur">Buy in EUR →</a>
+        </div>
+      </div>
+
+      <span class="price-once">One-time payment · Instant download</span>
+
+      <ul class="price-features">
+        <li>400 European Portuguese vocabulary words</li>
+        <li>Genuine EP content — comboio, telemóvel, bica and more</li>
+        <li>Grammar tips flagging EP vs Brazilian differences</li>
+        <li>12 verb conjugation tables (present, past, future)</li>
+        <li>42 real-life phrases for travellers</li>
+        <li>Spaced repetition — smarter than plain flashcards</li>
+        <li>Listen Mode — train your ear for EP sounds</li>
+        <li>Works offline in your browser</li>
+        <li>Progress saved locally — no account needed</li>
+        <li>Backup and restore your progress anytime</li>
+      </ul>
+
+      <div class="price-dual">
+        <div class="price-option">
+          <a href="https://milescape580.gumroad.com/l/mcybrc" class="btn-buy btn-buy-gbp">Buy in GBP — £8.50 →</a>
+        </div>
+        <div class="price-option">
+          <a href="https://milescape580.gumroad.com/l/nfjkfh" class="btn-buy btn-buy-eur">Buy in EUR — €9.99 →</a>
+        </div>
+      </div>
+
+      <p class="price-guarantee">30-day money-back guarantee. If you're not happy, just email us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq">
+  <p class="section-label" style="text-align:center;">Common questions</p>
+  <h2 class="section-title" style="text-align:center;margin-bottom:2rem;">FAQ</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is this really European Portuguese, not Brazilian?</div>
+    <div class="faq-a">Yes — genuinely. Every word, example and grammar tip reflects how Portuguese is spoken in Portugal. You'll find "comboio" not "trem", "telemóvel" not "celular", "perceber" not "entender", and notes throughout explaining exactly what makes EP different from Brazilian.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How does it work after I buy?</div>
+    <div class="faq-a">You download a single HTML file from Gumroad. Open it in any browser — Safari, Chrome, Firefox — and it runs entirely offline. No app store, no account, no internet needed after download. Your progress saves automatically in your browser.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Will my progress be saved if I close the browser?</div>
+    <div class="faq-a">Yes. Progress is saved to your browser's local storage automatically. It persists between sessions. You can also use the backup feature to download a save file — useful if you switch devices or browsers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Does it work on iPhone and iPad?</div>
+    <div class="faq-a">Yes — it's built specifically to work on Safari for iOS. The speech features use the Web Speech API, which is well supported on modern Apple devices.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">I'm a complete beginner. Is this suitable for me?</div>
+    <div class="faq-a">Absolutely. The Daily 10 mode is designed for beginners — it introduces 10 new words a day with clear examples and grammar tips. You can go at your own pace.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if I'm not happy with it?</div>
+    <div class="faq-a">Email us at contactus@linguavita.app within 30 days and we'll refund you in full, no questions asked.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Linguavita — Language for Life</div>
+  <div class="footer-links">
+    <a href="https://linguavita.app">Home</a>
+    <a href="https://french.linguavita.app">French</a>
+    <a href="https://portuguese.linguavita.app">Portuguese (BR)</a>
+    <a href="https://spanish.linguavita.app">Spanish</a>
+    <a href="mailto:contactus@linguavita.app">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 Linguavita · contactus@linguavita.app</p>
+</footer>
+
+</body>
+</html>
